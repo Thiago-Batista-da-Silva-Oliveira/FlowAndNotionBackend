@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import {
-  CreateUserController,
+  CreateUserController, FindUserController,
 } from '@modules/accounts/useCases';
 import { SessionController } from '@modules/accounts/useCases/Session';
 
@@ -9,6 +9,7 @@ import { SessionController } from '@modules/accounts/useCases/Session';
 export const userRoutes = Router();
 const createUserController = new CreateUserController();
 const sessionController = new SessionController();
+const findUserController = new FindUserController();
 
 userRoutes.post(
   '/register',
@@ -17,5 +18,11 @@ userRoutes.post(
 
 userRoutes.post(
   '/session',
+  sessionController.handle,
+);
+
+
+userRoutes.get(
+  '/findUser/:id',
   sessionController.handle,
 );
