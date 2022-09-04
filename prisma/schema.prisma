@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String @id @default(uuid())
+  email        String @unique
+  password     String
+
+  flowDomain   FlowDomain[]
+  notionDomain NotionDomain[]
+}
+
+model FlowDomain {
+  id     String @id @default(uuid())
+  userId String
+  user   User? @relation(fields: [userId], references: [id])
+
+  flow   Flow[]
+}
+
+model Flow {
+  id           String @id @default(uuid())
+  domainId     String
+  name         String
+  color        String?
+  description  String?
+  flowDomain   FlowDomain? @relation(fields: [domainId], references: [id])
+  flowPosition FlowPosition?
+  source Edge[] @relation("source")
+  target Edge[] @relation("target")
+}
+
+model FlowPosition {
+  id     String @id @default(uuid())
+  flowId String @unique
+  x      Float
+  y      Float
+  flow   Flow? @relation(fields: [flowId], references: [id])
+}
+
+model Edge {
+   id  String @id @default(uuid())
+   flowIdSource String
+   flowIdTarget String
+
+   flowSource   Flow? @relation("source", fields: [flowIdSource], references: [id])
+   flowTarget   Flow? @relation("target", fields: [flowIdTarget], references: [id])
+}
+
+model NotionDomain {
+  id              String @id @default(uuid())
+  userId          String
+  user            User? @relation(fields: [userId], references: [id])
+  color           String?
+  backgroundColor String?
+  notion   Notion[]
+}
+
+model Notion {
+  id            String @id @default(uuid())
+  domainId      String
+  title         String
+  text          String?
+  notionDomain   NotionDomain? @relation(fields: [domainId], references: [id])
+}
