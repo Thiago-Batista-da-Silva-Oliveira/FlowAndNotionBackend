@@ -1,6 +1,7 @@
 import 'dotenv/config';
 
 export const USER_REPOSITORY_KEY = 'UserRepository';
+export const FLOW_DOMAIN_REPOSITORY_KEY = 'FlowDomainRepository';
 export const HASH_PROVIDER = 'HashProvider'
 
 
