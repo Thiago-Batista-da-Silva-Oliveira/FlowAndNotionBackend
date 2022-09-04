@@ -1,6 +1,7 @@
-import { CACHE_TTL } from 'config';
+
 import NodeCache from 'node-cache';
 import { injectable } from 'tsyringe';
+import { CACHE_TTL } from '../../../../../config';
 
 import { ICacheProvider } from '../models/ICacheProvider';
 

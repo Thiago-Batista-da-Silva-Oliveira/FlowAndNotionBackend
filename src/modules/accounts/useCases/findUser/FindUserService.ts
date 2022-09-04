@@ -1,5 +1,6 @@
-import { USER_REPOSITORY_KEY } from 'config';
+
 import { inject, injectable } from 'tsyringe';
+import { USER_REPOSITORY_KEY } from '../../../../config';
 
 import { IUserRepository } from '../../repositories';
 

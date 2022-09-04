@@ -1,8 +1,8 @@
 
-import { prisma } from 'config';
-import { ICreateUserDTO } from 'modules/accounts/dtos';
-import { IFindUserDTO } from 'modules/accounts/dtos/IFindUser';
-import { IUserRepository } from 'modules/accounts/repositories';
+import { prisma } from '../../../../../config';
+import { ICreateUserDTO } from '../../../dtos';
+import { IFindUserDTO } from '../../../dtos/IFindUser';
+import { IUserRepository } from '../../../repositories';
 import { User } from '../entities/User';
 
 export class UserRepository implements IUserRepository {

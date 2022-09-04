@@ -1,10 +1,11 @@
-import { HASH_PROVIDER, USER_REPOSITORY_KEY } from 'config';
-import { GenerateTokenProvider } from 'modules/accounts/provider/GenerateTokenProvider';
-import { IHashProvider } from 'modules/accounts/provider/models';
-import { IUserRepository } from 'modules/accounts/repositories';
-import { ICacheProvider } from 'shared/container/providers/CacheProvider/models/ICacheProvider';
-import { AppError } from 'shared/utils/AppError';
+
 import { container, inject, injectable } from 'tsyringe';
+import { HASH_PROVIDER, USER_REPOSITORY_KEY } from '../../../../config';
+import { ICacheProvider } from '../../../../shared/container/providers/CacheProvider/models/ICacheProvider';
+import { AppError } from '../../../../shared/utils/AppError';
+import { GenerateTokenProvider } from '../../provider/GenerateTokenProvider';
+import { IHashProvider } from '../../provider/models';
+import { IUserRepository } from '../../repositories';
 
 
 @injectable()

@@ -5,7 +5,8 @@ import '../../container'
 import express, { Response, Request, NextFunction } from 'express'
 import cors from 'cors';
 import { routes } from './routes';
-import { AppError } from "shared/utils/AppError";
+import { AppError } from "../../utils/AppError";
+
 
 export const app = express()
 
