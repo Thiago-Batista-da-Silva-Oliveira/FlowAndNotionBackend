@@ -1,10 +1,11 @@
 import "reflect-metadata";
 import "express-async-errors"
 import '../../container'
-import { AppError } from '@shared/utils/AppError';
+
 import express, { Response, Request, NextFunction } from 'express'
 import cors from 'cors';
 import { routes } from './routes';
+import { AppError } from "shared/utils/AppError";
 
 export const app = express()
 

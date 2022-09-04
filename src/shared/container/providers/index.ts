@@ -1,1 +1,1 @@
-import '@modules/accounts/provider'
+import '../../../modules/accounts/provider'

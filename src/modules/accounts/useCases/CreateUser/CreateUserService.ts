@@ -1,9 +1,10 @@
-import { USER_REPOSITORY_KEY } from '@config/constants';
-import { User } from '@modules/accounts/infra/prisma/entities';
-import { IHashProvider } from '@modules/accounts/provider/models';
-import { IUserRepository } from '@modules/accounts/repositories';
-import { AppError } from '@shared/utils/AppError';
-import { Validation } from '@shared/utils/Validation';
+
+import { USER_REPOSITORY_KEY } from 'config';
+import { User } from 'modules/accounts/infra';
+import { IHashProvider } from 'modules/accounts/provider/models';
+import { IUserRepository } from 'modules/accounts/repositories';
+import { AppError } from 'shared/utils/AppError';
+import { Validation } from 'shared/utils/Validation';
 import { inject, injectable } from 'tsyringe';
 
 @injectable()

@@ -1,4 +1,4 @@
-import { AppError } from '@shared/utils/AppError';
+import { AppError } from "./AppError";
 
 
 type Props = {

@@ -1,10 +1,8 @@
-import { prisma } from '@config/prismaClient';
-import {
-  ICreateUserDTO,
-  IUserRepository,
-} from '@modules/accounts';
-import { IFindUserDTO } from '@modules/accounts/dtos/IFindUser';
 
+import { prisma } from 'config';
+import { ICreateUserDTO } from 'modules/accounts/dtos';
+import { IFindUserDTO } from 'modules/accounts/dtos/IFindUser';
+import { IUserRepository } from 'modules/accounts/repositories';
 import { User } from '../entities/User';
 
 export class UserRepository implements IUserRepository {
