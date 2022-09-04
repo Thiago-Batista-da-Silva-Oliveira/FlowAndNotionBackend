@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register src/shared/infra/http/server.ts",
-    "start": "node src/shared/infra/http/server.js"
+    "start": "node build/src/shared/infra/http/server.js",
+    "postinstall": "tsc"
   },
   "keywords": [],
   "author": "",
