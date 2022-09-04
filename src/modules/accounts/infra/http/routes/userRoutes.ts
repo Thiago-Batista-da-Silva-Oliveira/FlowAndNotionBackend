@@ -20,5 +20,5 @@ userRoutes.post(
 
 userRoutes.get(
   '/findUser/:id',
-  sessionController.handle,
+  findUserController.handle,
 );
