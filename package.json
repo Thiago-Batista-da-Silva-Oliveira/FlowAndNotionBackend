@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register src/shared/infra/http/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "start": "node build/src/shared/infra/http/server.js",
     "postinstall": "tsc"
   },
@@ -25,7 +25,8 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.6",
     "ts-node-dev": "^2.0.0",
-    "tsyringe": "^4.7.0"
+    "tsyringe": "^4.7.0",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { CreateFlowDomainController, DeleteFlowController, DeleteFlowDomainController, ListFlowController, ListFlowDomainsController } from '../../../useCases';
+import { CreateEdgeController, CreateFlowDomainController, DeleteFlowController, DeleteFlowDomainController, ListFlowController, ListFlowDomainsController } from '../../../useCases';
 import { CreateFlowController } from '../../../useCases/CreateFlow';
 
 
@@ -12,6 +12,7 @@ const deleteFlowController = new DeleteFlowController()
 const listFlowController = new ListFlowController()
 
 const createFlowController = new CreateFlowController()
+const createEdgeController = new CreateEdgeController()
 
 flowRoutes.post(
   '/createFlowDomain',
@@ -41,4 +42,9 @@ flowRoutes.delete(
 flowRoutes.post(
   '/createFlow',
   createFlowController.handle,
+);
+
+flowRoutes.post(
+  '/createEdge',
+  createEdgeController.handle,
 );

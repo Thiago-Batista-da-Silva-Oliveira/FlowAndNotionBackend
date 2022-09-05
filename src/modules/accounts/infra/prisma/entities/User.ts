@@ -1,4 +1,4 @@
-
+import { uuid } from 'uuidv4';
 
 export class User {
   id?: string;
@@ -6,6 +6,9 @@ export class User {
   password: string;
 
   private constructor(userInfo: User) {
+    if (!this.id) {
+      this.id = uuid();
+    }
     Object.assign(this, { ...userInfo });
   }
 

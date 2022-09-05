@@ -11,6 +11,12 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
+  "typeRoots": [
+    "./src/@types",
+    "./custom_typings",
+    "./@types",
+    "./node_modules/@types"
+  ],
   "include": [
     "src/**/*"
 , "prisma/seed.ts"  ]

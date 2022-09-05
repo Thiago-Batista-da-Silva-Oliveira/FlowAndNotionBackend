@@ -1,3 +1,5 @@
+import { uuid } from "uuidv4";
+
 export class Flow {
     id?: string;
     name: string
@@ -6,6 +8,9 @@ export class Flow {
     description: string;
   
     private constructor(flowInfo: Flow) {
+      if (!this.id) {
+        this.id = uuid();
+      }
       Object.assign(this, { ...flowInfo });
     }
   

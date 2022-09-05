@@ -26,6 +26,7 @@ model FlowDomain {
   user   User? @relation(fields: [userId], references: [id])
 
   flow   Flow[]
+  edge   Edge[]
 }
 
 model Flow {
@@ -52,9 +53,11 @@ model Edge {
    id  String @id @default(uuid())
    flowIdSource String
    flowIdTarget String
+  domainId String
 
    flowSource   Flow? @relation("source", fields: [flowIdSource], references: [id])
    flowTarget   Flow? @relation("target", fields: [flowIdTarget], references: [id])
+   flowDomain   FlowDomain? @relation(fields: [domainId], references: [id])
 }
 
 model NotionDomain {
