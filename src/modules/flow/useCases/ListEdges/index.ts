@@ -1,2 +1,2 @@
 export * from './ListEdgesController'
-export * from './ListFlowService'
+export * from './ListEdgesService'

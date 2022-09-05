@@ -6,6 +6,7 @@ export interface IFlowRepository {
   create(data: ICreateFlowDTO, positions: {x: number; y: number; flowId: string; id?: string}): Promise<Flow>;
   createEdge(data: ICreateEdgeDTO): Promise<Edge>;
   findMany(domainId: string): Promise<Flow[]>;
+  findManyEdges(domainId: string): Promise<Edge[]>;
   findBy(data: {id: string}): Promise<Flow>;
   delete(data: {id: string}): Promise<void>;
   update(flowId: {flowId: string}, data: {x?: number; y?: number}): Promise<FlowPosition>;

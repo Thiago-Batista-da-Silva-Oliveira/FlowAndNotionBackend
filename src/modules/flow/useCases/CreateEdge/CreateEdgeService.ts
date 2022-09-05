@@ -1,7 +1,5 @@
-import { hash } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
 import { FLOW_REPOSITORY_KEY } from '../../../../config';
-import { AppError } from '../../../../shared/utils/AppError';
 import { Edge } from '../../infra';
 import { IFlowRepository } from '../../repositories';
 
@@ -15,13 +13,15 @@ export class CreateEdgeService {
 
   async execute({
     flowIdSource,
-    flowIdTarget
+    flowIdTarget,
+    domainId
   }) {
   
 
     const edge = Edge.create({
       flowIdSource,
       flowIdTarget,
+      domainId
     })
 
     const newEdge = await this.flowRepository.createEdge(edge)

@@ -4,6 +4,7 @@ export class Edge {
    id?: string
    flowIdSource: string
    flowIdTarget: string
+   domainId: string
     private constructor(edgeInfo: Edge) {
         if (!this.id) {
             this.id = uuid();
