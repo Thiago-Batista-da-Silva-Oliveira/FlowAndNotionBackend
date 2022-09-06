@@ -1,1 +1,1 @@
-export * from './FlowDomainRepository'
+export * from './NotionDomainRepository'

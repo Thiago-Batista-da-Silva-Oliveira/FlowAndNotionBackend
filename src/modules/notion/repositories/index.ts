@@ -1,2 +1,2 @@
-export * from './IFlowDomainRepository'
-export * from './IFlowRepository'
+export * from './INotionDomainRepository'
+export * from './INotionRepository'

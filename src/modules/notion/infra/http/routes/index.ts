@@ -1,1 +1,1 @@
-export * from './flowDomainRoutes'
+export * from './notionRoutes'

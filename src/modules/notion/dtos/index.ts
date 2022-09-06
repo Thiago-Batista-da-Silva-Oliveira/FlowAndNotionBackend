@@ -1,1 +1,1 @@
-export * from './ICreateFlowDomain'
+export * from './ICreateNotionDomainDTO'
