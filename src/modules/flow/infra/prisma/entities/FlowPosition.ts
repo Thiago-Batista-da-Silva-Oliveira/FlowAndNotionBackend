@@ -3,7 +3,7 @@ export class FlowPosition {
     id?: string;
     x: number;
     y: number;
-    flowId: string
+    flowId?: string
   
     private constructor(flowPositionInfo: FlowPosition) {
       if (!this.id) {

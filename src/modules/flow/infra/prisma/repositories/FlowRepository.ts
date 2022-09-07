@@ -64,9 +64,8 @@ export class FlowRepository implements IFlowRepository {
     return domains;
   }
 
-  async delete(data: {id: string}): Promise<void> {
-    this.repository.delete({
-      where: data,
-    });
+  async delete(data: { id: string }): Promise<Flow> {
+    return this.repository.delete({ where: data });
   }
+
 }

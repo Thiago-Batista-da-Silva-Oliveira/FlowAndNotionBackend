@@ -9,6 +9,7 @@ export class CreateNotionController {
         const { 
         title,
         text,
+        date
         } = req.body
 
         const createFlowService = container.resolve(CreateNotionService)
@@ -16,6 +17,7 @@ export class CreateNotionController {
             domainId,
             title,
             text,
+            date
         })
       
         return res.status(201).json({message: 'success', payload: data})

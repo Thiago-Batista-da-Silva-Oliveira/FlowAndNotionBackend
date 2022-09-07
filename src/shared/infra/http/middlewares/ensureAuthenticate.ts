@@ -22,7 +22,7 @@ export function ensureAuthenticated(
   const [, token] = authToken.split(' ');
 
   try {
-    const verifyToken = verify(token, process.env.JWT_SECRET) as IPayload;
+    const verifyToken = verify(token,'dsa59d9as9d5as5') as IPayload;
     req.user = verifyToken.sub;
     return next();
   } catch (err) {

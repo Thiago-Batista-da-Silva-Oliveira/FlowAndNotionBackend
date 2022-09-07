@@ -13,11 +13,13 @@ export class CreateNotionService {
     domainId,
     title,
     text,
+    date
   }) {
     const notion = Notion.create({
       domainId,
       title,
       text,
+      date
     });
 
     const newNotion = await this.notionRepository.create(notion)

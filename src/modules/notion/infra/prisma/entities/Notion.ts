@@ -4,6 +4,7 @@ export class Notion {
     title: string;
     text: string;
     domainId: string;
+    date: string;
   
     private constructor(notionInfo: Notion) {
       if (!this.id) {

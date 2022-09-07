@@ -27,7 +27,6 @@ export class CreateFlowService {
     const flowPosition = FlowPosition.create({
       x,
       y,
-      flowId: flow.id
     })
 
     const newFlowDomain = await this.flowRepository.create(flow, flowPosition)

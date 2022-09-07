@@ -53,7 +53,7 @@ model Edge {
    id  String @id @default(uuid())
    flowIdSource String
    flowIdTarget String
-  domainId String
+   domainId String
 
    flowSource   Flow? @relation("source", fields: [flowIdSource], references: [id])
    flowTarget   Flow? @relation("target", fields: [flowIdTarget], references: [id])
@@ -75,5 +75,6 @@ model Notion {
   domainId      String
   title         String
   text          String?
+  date          String?
   notionDomain   NotionDomain? @relation(fields: [domainId], references: [id])
 }
